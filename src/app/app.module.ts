@@ -15,7 +15,7 @@ import { ThrottleThisDirective } from '../directive/throttlethis.directive';
     RightComponent,
     TopComponent,
     TheCounterComponent,
-    ThrottleThisDirective
+    ThrottleThisDirective,
   ],
   imports: [
     BrowserModule,
