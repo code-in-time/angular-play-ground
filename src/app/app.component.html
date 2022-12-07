@@ -1,0 +1,20 @@
+App counterFromRight: <app-the-counter [counter]="counterFromRight"></app-the-counter>
+<br /><br />
+<app-the-counter [counter]="globalCounterValue"></app-the-counter> | 
+globalCounterValue : 
+<app-the-counter [counter]="globalCounterService.globalCounter"></app-the-counter>
+<br/><br />
+
+<app-top></app-top>
+<hr />
+<app-left></app-left>
+<hr />
+<app-right (eventRight)="getValueFromRight($event)"></app-right>
+<hr />
+
+
+<button type="button" appThrottleThis [limit]="100">throttle this button</button>
+
+<button type="button" appThrottleThis [limit]="400">throttle this button</button>
+<button type="button" appThrottleThis [limit]="200">throttle this button</button>
+<button type="button" appThrottleThis [limit]="400">throttle this button</button>
