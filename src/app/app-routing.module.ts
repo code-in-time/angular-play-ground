@@ -6,6 +6,7 @@ import { ApiConceptComponent } from './components/api-concept/api-concept.compon
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'api', component: ApiConceptComponent },
+  { path: '',  redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

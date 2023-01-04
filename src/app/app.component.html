@@ -1,7 +1,11 @@
-<nav>
-  <a routerLink="/crisis-center" routerLinkActive="active" ariaCurrentWhenActive="page">Crisis Center</a>
-  <a routerLink="/heroes" routerLinkActive="active" ariaCurrentWhenActive="page">Heroes</a>
-</nav>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a routerLink="/home" class="nav-link" routerLinkActive="active">home</a>
+  </li>
+  <li class="nav-item">
+    <a routerLink="/api" class="nav-link" routerLinkActive="active">api</a>
+  </li>
+</ul>
 
 <router-outlet></router-outlet>
 
@@ -9,10 +13,10 @@
 
 App counterFromRight: <app-the-counter [counter]="counterFromRight"></app-the-counter>
 <br /><br />
-<app-the-counter [counter]="globalCounterValue"></app-the-counter> | 
-globalCounterValue : 
+<app-the-counter [counter]="globalCounterValue"></app-the-counter> |
+globalCounterValue :
 <app-the-counter [counter]="globalCounterService.globalCounter"></app-the-counter>
-<br/><br />
+<br /><br />
 
 <app-top></app-top>
 <hr />
