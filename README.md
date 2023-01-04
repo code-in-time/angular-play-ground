@@ -7,3 +7,4 @@ This is so I can learn concepts
 - Make another timer in RXJS that polls a url using RXJS
 - add more tasks
 - add two inputs that use combineLATEST in RXJS
+- API call using RXJS
