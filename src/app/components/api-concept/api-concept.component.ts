@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { map, catchError, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { delay } from 'rxjs/operators';
 
 interface Data {
   login?: string;
@@ -32,18 +33,33 @@ interface Data {
 export class ApiConceptComponent implements OnInit {
 
   public data?: Data[]
+  public loaded = false;
 
   constructor() { }
 
   ngOnInit(): void {
     const obs$ = ajax(`${environment.env_URL}/users?per_page=5`)
+      // A delay is added to prove that the spinner works
+      .pipe(delay(3000));
+
     obs$.subscribe({
       next: value => {
         this.data = value.response as Data[];
         console.log('this.data', this.data)
+        this.loaded = true;
+
       },
       error: err => console.log(err)
     });
+  }
+
+  buildURL(url?: string): string {
+    // provr that I can return an html string 
+    const user = url?.split('/').reverse();
+    if (user) {
+      return `<a href="${url}" target="_blank">${user[0]}</a>`
+    }
+    return '';
   }
 
 }
